@@ -115,8 +115,27 @@ public class Cat:Animal
         if(FurLength == "Sin Pelo"|| FurLength== "Pelo Corto"){
             Util.RedText("Pelo Demasiado corto para la operacion");
         }else{
-            FurLength= "Pelo Corto";
+            FurrOrCoatLenghtSwitch();
+        Util.GreenText("Pelo cortado");
         }
+    }
+    public static Cat Searchcat(List<Cat> cats){
+        Util.Title("Buscar Gato",ConsoleColor.DarkYellow);
+        Console.Write("Id del gato");
+        string id= Exceptions.SafeEMptyorNull();
+        Cat? resultCat= cats.FirstOrDefault(p=> p.Id==Guid.Parse(id));
+        if (resultCat!= null)
+        {
+            return resultCat;
+        }
+        else
+        {
+            Util.RedText("Cat not found");
+            Searchcat(cats);
+        }
+        return null;//
+        
+
     }
 
 }
