@@ -55,6 +55,7 @@ public static class Menues
         Console.Write($@"
     oprima el numero de opcion  a la que desea acceder
     1: Lista Todos los Pacientes 
+    2: Buscar Mascota
 
     0: Salir
     ");
@@ -65,6 +66,11 @@ public static class Menues
             Demo.ShowAllPatients();
                 break;      
 
+            case ConsoleKey.D2:
+            Console.Write("Id de la mascota");
+        string id= Exceptions.SafeEMptyorNull();
+        Demo.ShowPatient(id);
+            break;
             case ConsoleKey.D0:// case Return Menu
 
                 MainMenu();
@@ -85,7 +91,6 @@ public static class Menues
     2: Nuevo Perro
     3: eliminar Registro de Perro
     4: editar Registro de un perro
-    5: 
 
     0: Salir
     ");
@@ -140,7 +145,7 @@ public static class Menues
             Demo.SaveCat(ManagerApp.CreateCat());
                 break;
             case ConsoleKey.D3:// case Delete
-                
+                Demo.Deletecat(Cat.Searchcat(Demo.Cats));
                 break;
                 case ConsoleKey.D4:// update
                 Demo.updateCat(Cat.Searchcat(Demo.Cats));
