@@ -40,12 +40,21 @@ public class VeteinaryClinic
 
     public void updateCat(Cat cat){}
     //deleting
-    public void DeleteDog(int id){}
-    public void Deletecat(int id){}
-    //
+    public void DeleteDog(int id){
+    }
+    public void Deletecat(int id){
+
+    }
+    //Show
+    public void ShowAllPatients(){}
+    public void ShowAnimals(string type){
+        //List<Animal> dogRes= Dogs.Where(x=> x.)
+    }
+    public void ShowPatient(int idPatient){}
 
 
-    public static int IdGenereatorDog(List<Dog>Dogs){
+
+    public static int IdGenereatorDog(List<Dog> Dogs){
         //this method will look in the vehicle list, look for the lenght, add +1, lok if that number is alredy, and give aditional number untill finds a non number
         int IdNew = Dogs.Count + 1;// based on the vehicle lenght he will give a number
         do
