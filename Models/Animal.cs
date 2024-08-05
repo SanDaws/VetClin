@@ -36,7 +36,7 @@ public abstract class Animal
     protected int CalculateAgeInMonths(){ // returns a the total of months alive of the animal
         int months;
         DateOnly now=DateOnly.FromDateTime(DateTime.Now);
-        months= (BirthDate.Year-now.Year)*12;
+        months= (now.Year-BirthDate.Year)*12;
         months+=now.Month;
         return months;
     }
