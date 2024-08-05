@@ -23,22 +23,24 @@ public class VeteinaryClinic
         Address=address;
     }
     //creating
-    public void SaveDog(Dog newDog){
+    public void SaveDog(Dog newDog){//add a new dog to the list
         Dogs.Add(newDog);
         Util.GreenText("Registro Satisfactorio de Mascota");
+
         Menues.ReturnToMainMenu();
     }
     
-     public void SaveCat(Cat newCat){
+     public void SaveCat(Cat newCat){//add a new cat to the list
         Cats.Add(newCat);
         Util.GreenText("Registro Satisfactorio de Mascota");
+
         Menues.ReturnToMainMenu();
     }
 
     
     //Updating
     public void updateDog(Dog dog){
-        //change the public thigs dog got
+        //change the public things dog got
         Util.Title("Modificacndo perro",ConsoleColor.Yellow);
 
         Console.Write($"{Name} tiene : {dog.BarkVolume} el nueevo valor seria:");
@@ -50,26 +52,30 @@ public class VeteinaryClinic
 
         Console.Write($"{Name} tiene : {dog.MicrochipNumber} el nueevo valor seria:");
         dog.MicrochipNumber= Exceptions.SafeEMptyorNull();
+
+
         Menues.DogMenu();
 
 
     }
 
     public void updateCat(Cat cat){
+        //allow to change pulic attributes of cat
         cat.Hairdress();
+        
         cat.CastrateAnimal();
 
         Menues.CatMenu();
 
     }
     //deleting
-    public void DeleteDog(Dog dog){
+    public void DeleteDog(Dog dog){//because is a bad practice to mutate to public some protected attribute, i used the object itself insted of his id, that search will be make it in the class itself
         Dogs.Remove(dog);
         Util.GreenText($"registro Eliminado satisfactoriamente ");
         Console.ReadKey();
         Menues.DogMenu();
     }
-    public void Deletecat(Cat cat){
+    public void Deletecat(Cat cat){//because is a bad practice to mutate to public some protected attribute, i used the object itself insted of his id, that search will be make it in the class itself
         Cats.Remove(cat);
         Util.GreenText($"registro Eliminado satisfactoriamente ");
         Console.ReadKey();
@@ -89,7 +95,7 @@ public class VeteinaryClinic
         }
          Menues.ReturnToMainMenu();
     }
-    public void ShowAnimals(string type){
+    public void ShowAnimals(string type){// it was not specificate what Type was, so as used as generic printing for each list
          Util.Title($"{type}",ConsoleColor.Blue);
          if (type=="perro")
          {
@@ -110,8 +116,26 @@ public class VeteinaryClinic
 
        
     }
-    public void ShowPatient(int idPatient){
+    public void ShowPatient(string idPatient){
          Util.Title("Todos los pacientes",ConsoleColor.Blue);
+        
+         Dog dg= Dog.SearchDog(Dogs,idPatient);
+         Cat ct= Cat.Searchcat(Cats,idPatient);
+         if (dg == null & ct== null )
+         {
+            Util.RedText("Animal no encotrontrado");
+            Menues.ReturnToMainMenu();
+         }else{
+            if (dg!=null)
+            {
+                dg.ShowInformation();
+            }
+            if (ct!= null)
+            {
+                ct.ShowInformation();
+            }
+            Menues.ReturnToMainMenu();
+         }
 
     }
 

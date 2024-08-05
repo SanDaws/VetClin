@@ -24,7 +24,7 @@ public abstract class Animal
         this.WeightInKg=WeightInKg;
 
     }
-    public abstract void ShowInformation();// this should be Virtual insted of abstract for an easy implementation and scalation
+    public abstract void ShowInformation();// this would be Virtual insted of abstract for an easy implementation and scalation
 
     protected void BasicReview(){//shows the basic data of the animal
         
