@@ -120,5 +120,20 @@ public override void ShowInformation()
     BasicReview();
     Console.WriteLine($"|{MicrochipNumber,20}|{BarkVolume,6}|{CoatType,10}|{BreedStatusTOtext(BreedingStatus),12}");
 }
+public void CastrateAnimal(){
+        BreedingStatus=true;
+        if (BreedingStatus== false)
+        {
+            Util.RedText("Animal previamente castrado");
+        }
+        Menues.ReturnToMainMenu();
+    }
+    public void Hairdress(){
+        if(CoatType == "Sin Pelo"|| CoatType== "Pelo Corto"){
+            Util.RedText("Pelo Demasiado corto para la operacion");
+        }else{
+            CoatType= "Pelo Corto";
+        }
+    }
 
 }

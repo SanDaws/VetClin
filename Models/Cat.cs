@@ -86,5 +86,21 @@ public class Cat:Animal
     Console.WriteLine($"{FurLength,20}|{BreedStatusTOtext(BreedingStatus),12}");
     }
 
+    public void CastrateAnimal(){
+        BreedingStatus=true;
+        if (BreedingStatus== false)
+        {
+            Util.RedText("Animal previamente castrado");
+        }
+        Menues.ReturnToMainMenu();
+    }
+    public void Hairdress(){
+        if(FurLength == "Sin Pelo"|| FurLength== "Pelo Corto"){
+            Util.RedText("Pelo Demasiado corto para la operacion");
+        }else{
+            FurLength= "Pelo Corto";
+        }
+    }
+
 }
 
