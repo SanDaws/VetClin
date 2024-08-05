@@ -53,7 +53,10 @@ public static class ManagerApp
         string color= Exceptions.SafeEMptyorNull();
         //weight
         double weightInKg= Exceptions.SafeDouble("Peso en Kilogramos(Kg)");
-        
 
-    }
+        Cat NewCat= new Cat(0,name,birthDate,breed,color,weightInKg);
+        return NewCat;
+
+
+    }  
 }
