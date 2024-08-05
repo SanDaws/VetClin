@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Simulacro.Models;
 
 namespace VetClin.Models;
 
@@ -21,12 +22,30 @@ public class VeteinaryClinic
         Name=name;
         Address=address;
     }
-
+    //creating
+    public void SaveDog(Dog newDog){
+        Dogs.Add(newDog);
+        Util.GreenText("Registro Satisfactorio de Mascota");
+        Menues.ReturnToMainMenu();
+    }
     
+     public void SaveCat(Cat newCat){
+        Cats.Add(newCat);
+        Util.GreenText("Registro Satisfactorio de Mascota");
+        Menues.ReturnToMainMenu();
+    }
+    
+    //Updating
+    public void updateDog(Dog dog){}
+
+    public void updateCat(Cat cat){}
+    //deleting
+    public void DeleteDog(int id){}
+    public void Deletecat(int id){}
+    //
 
 
-
-    public static int IdGenereatorDog(List<Animal>Dogs){
+    public static int IdGenereatorDog(List<Dog>Dogs){
         //this method will look in the vehicle list, look for the lenght, add +1, lok if that number is alredy, and give aditional number untill finds a non number
         int IdNew = Dogs.Count + 1;// based on the vehicle lenght he will give a number
         do
