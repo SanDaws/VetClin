@@ -14,7 +14,7 @@ namespace Simulacro.Models;
 
         //Main menu for the User interface
         public static void MainMenu(){
-        Util.Title("TransRiwi",ConsoleColor.Magenta);//fancy Tittles
+        Util.Title("VetClinc",ConsoleColor.Magenta);//fancy Tittles
         Console.Write($@"
         oprima el numero de opcion  a la que decea acceder
         1: Conductores
