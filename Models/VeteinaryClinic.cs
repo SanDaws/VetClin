@@ -34,6 +34,11 @@ public class VeteinaryClinic
         Util.GreenText("Registro Satisfactorio de Mascota");
         Menues.ReturnToMainMenu();
     }
+
+    //searchig
+    public void searchingDog(){}
+
+    public void searchingCat(){}
     
     //Updating
     public void updateDog(Dog dog){}
@@ -46,11 +51,18 @@ public class VeteinaryClinic
 
     }
     //Show
-    public void ShowAllPatients(){}
+    public void ShowAllPatients(){
+        Util.Title("Todos los pacientes",ConsoleColor.Blue);
+        
+    }
     public void ShowAnimals(string type){
+         Util.Title("Todos los pacientes",ConsoleColor.Blue);
         //List<Animal> dogRes= Dogs.Where(x=> x.)
     }
-    public void ShowPatient(int idPatient){}
+    public void ShowPatient(int idPatient){
+         Util.Title("Todos los pacientes",ConsoleColor.Blue);
+
+    }
 
 
     
