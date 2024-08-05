@@ -16,7 +16,7 @@ public abstract class Animal
     protected double WeightInKg;
     //cosntructor
     public Animal(string Name,DateOnly BirthDate,string Breed,string Color,double WeightInKg){
-        id=VeteinaryClinic.VehicleIdGenerator();
+        //id=VeteinaryClinic.VehicleIdGenerator();
         this.Name=Name;
         this.BirthDate=BirthDate;
         this.Breed=Breed;
@@ -35,14 +35,10 @@ public abstract class Animal
 
     protected int CalculateAgeInMonths(){
         int months;
-        DateOnly now=new DateOnly();
+        DateOnly now=DateOnly.FromDateTime(DateTime.Now);
         months= (BirthDate.Year-now.Year)*12;
-       switch (now.Month.CompareTo(BirthDate.Month))
-       {
-        
-        default:
-       }
-        return 0;
+        months+=now.Month;
+        return months;
     }
 
     protected string BreedStatusTOtext(bool condition){
