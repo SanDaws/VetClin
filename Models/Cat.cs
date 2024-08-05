@@ -12,9 +12,8 @@ public class Cat:Animal
     public bool BreedingStatus;
     public string FurLength;
     //cosntructor
-    public Cat(int id,string Name,DateOnly BirthDate,string Breed,string Color,double WeightInKg)
+    public Cat(string Name,DateOnly BirthDate,string Breed,string Color,double WeightInKg)
     :base(Name,BirthDate,Breed,Color,WeightInKg){
-        Id=id;
         BredingStatusSwitch();
         FurrOrCoatLenghtSwitch();
 

@@ -17,9 +17,9 @@ public class Dog:Animal
 
     //Method
     //constructor
-    public Dog(int id,string Name,DateOnly BirthDate,string Breed,string Color,double WeightInKg,string MicrochipNumber,string BarkVolume)
+    public Dog(string Name,DateOnly BirthDate,string Breed,string Color,double WeightInKg,string MicrochipNumber,string BarkVolume)
     :base(Name,BirthDate,Breed,Color,WeightInKg){
-        Id=id;
+ 
         this.MicrochipNumber=MicrochipNumber;
         this.BarkVolume=BarkVolume;
         FurrOrCoatLenghtSwitch();
