@@ -8,7 +8,7 @@ namespace VetClin.Models;
 public abstract class Animal
 {
     //attributes
-    protected int Id;
+    protected Guid Id;
     protected string Name;
     protected DateOnly BirthDate;
     protected string Breed;
@@ -16,6 +16,7 @@ public abstract class Animal
     protected double WeightInKg;
     //cosntructor
     public Animal(string Name,DateOnly BirthDate,string Breed,string Color,double WeightInKg){
+        Id= Guid.NewGuid();
         this.Name=Name;
         this.BirthDate=BirthDate;
         this.Breed=Breed;
@@ -27,7 +28,7 @@ public abstract class Animal
 
     protected void BasicReview(){//shows the basic data of the animal
         
-        Console.Write($"{Id,20}|{Name,20}|{Breed,30}|{Color,20}|{WeightInKg,6}|{CalculateAgeInMonths(),15}");
+        Console.Write($"{Id,30}|{Name,20}|{Breed,30}|{Color,20}|{WeightInKg,6}|{CalculateAgeInMonths(),15}");
     }
     
 
