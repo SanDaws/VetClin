@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace VetClin.Models
 {
-    public class Animal
+    public abstract class Animal
     {
         
     }
