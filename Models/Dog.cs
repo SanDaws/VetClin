@@ -121,19 +121,41 @@ public override void ShowInformation()
     Console.WriteLine($"|{MicrochipNumber,20}|{BarkVolume,6}|{CoatType,10}|{BreedStatusTOtext(BreedingStatus),12}");
 }
 public void CastrateAnimal(){
-        BreedingStatus=true;
+    
+    Console.WriteLine($@"{Name} se encuetra :
+        1: si
+        2: No");
+        ConsoleKeyInfo response=Console.ReadKey();
+        switch (response.Key)
+        {
+            case ConsoleKey.D1:
+            BreedingStatus=true;
         if (BreedingStatus== false)
         {
             Util.RedText("Animal previamente castrado");
         }
-        Menues.ReturnToMainMenu();
+
+            break;
+            case ConsoleKey.D2:
+            BreedingStatus= false;
+            break;
+            
+            
+            default:
+            Util.RedText("Opcion no Existente");
+            CastrateAnimal();
+            break;
+        }
+        
     }
     public void Hairdress(){
         if(CoatType == "Sin Pelo"|| CoatType== "Pelo Corto"){
             Util.RedText("Pelo Demasiado corto para la operacion");
         }else{
-            CoatType= "Pelo Corto";
+            FurrOrCoatLenghtSwitch();
+        Util.GreenText("Pelo cortado");
         }
+
     }
 
 }

@@ -86,12 +86,30 @@ public class Cat:Animal
     }
 
     public void CastrateAnimal(){
-        BreedingStatus=true;
+       Console.WriteLine($@"{Name} se encuetra :
+        1: si
+        2: No");
+        ConsoleKeyInfo response=Console.ReadKey();
+        switch (response.Key)
+        {
+            case ConsoleKey.D1:
+            BreedingStatus=true;
         if (BreedingStatus== false)
         {
             Util.RedText("Animal previamente castrado");
         }
-        Menues.ReturnToMainMenu();
+
+            break;
+            case ConsoleKey.D2:
+            BreedingStatus= false;
+            break;
+            
+            
+            default:
+            Util.RedText("Opcion no Existente");
+            CastrateAnimal();
+            break;
+        }
     }
     public void Hairdress(){
         if(FurLength == "Sin Pelo"|| FurLength== "Pelo Corto"){
