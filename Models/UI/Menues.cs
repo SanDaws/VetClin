@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using VetClin.Models;
+using VetClin.Models.UI;
 
 namespace Simulacro.Models;
 
@@ -12,7 +13,7 @@ public static class Menues
     this menues works by recursivness
     that means i got no loops in for the running of the menues, it will always iterate the same function by itself
     */
-
+    static VeteinaryClinic Demo= new VeteinaryClinic();// demo veterinary for future scalation
     //Main menu for the User interface
     public static void MainMenu(){
     Util.Title("VetClinc",ConsoleColor.Magenta);//fancy Tittles
@@ -52,11 +53,8 @@ public static class Menues
     public static void GeneralMenu(){
         Util.Title("Menu General",ConsoleColor.Blue);
         Console.Write($@"
-    oprima el numero de opcion  a la que decea acceder
-    1: Lista Conductores
-    2: Nuevo registro de Conductor
-    3: eliminar registro de Conductor
-    4: 
+    oprima el numero de opcion  a la que desea acceder
+    1: Lista Todos los Pacientes 
 
     0: Salir
     ");
@@ -64,15 +62,8 @@ public static class Menues
         switch (response.Key)
         {
             case ConsoleKey.D1://case read
-                break;
-            case ConsoleKey.D2:// case create
-                break;
-            case ConsoleKey.D3:// case Delete
-                
-                break;
-                case ConsoleKey.D4:// 
-                
-                break;
+                break;      
+
             case ConsoleKey.D0:// case Return Menu
 
                 MainMenu();
@@ -89,9 +80,9 @@ public static class Menues
         Util.Title("Perros",ConsoleColor.Blue);
         Console.Write($@"
     oprima el numero de opcion  a la que decea acceder
-    1: Listar usuarios Pasajeros
-    2: Nuevo Registro de pasajero
-    3: eliminar Registro de pasajero
+    1: Listar Perros
+    2: Nuevo Perro
+    3: eliminar Registro de Perro
     4: 
     5: 
 
@@ -104,7 +95,7 @@ public static class Menues
                 
                 break;
             case ConsoleKey.D2:// case create
-        
+                Demo.SaveDog(ManagerApp.CreateDog());
                 break;
             case ConsoleKey.D3:// case delete
                 
@@ -131,9 +122,9 @@ public static class Menues
         Util.Title("Gatos",ConsoleColor.Blue);
         Console.Write($@"
     oprima el numero de opcion  a la que decea acceder
-    1: Lista Conductores
-    2: Nuevo registro de Conductor
-    3: eliminar registro de Conductor
+    1: Lista Gatoes
+    2: Nuevo registro de Gato
+    3: eliminar registro de Gato
     4: 
 
     0: Salir
@@ -144,6 +135,7 @@ public static class Menues
             case ConsoleKey.D1://case read
                 break;
             case ConsoleKey.D2:// case create
+            Demo.SaveCat(ManagerApp.CreateCat());
                 break;
             case ConsoleKey.D3:// case Delete
                 

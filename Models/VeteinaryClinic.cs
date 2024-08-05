@@ -35,10 +35,6 @@ public class VeteinaryClinic
         Menues.ReturnToMainMenu();
     }
 
-    //searchig
-    public void searchingDog(){}
-
-    public void searchingCat(){}
     
     //Updating
     public void updateDog(Dog dog){}
@@ -57,7 +53,7 @@ public class VeteinaryClinic
     }
     public void ShowAnimals(string type){
          Util.Title("Todos los pacientes",ConsoleColor.Blue);
-        //List<Animal> dogRes= Dogs.Where(x=> x.)
+       
     }
     public void ShowPatient(int idPatient){
          Util.Title("Todos los pacientes",ConsoleColor.Blue);
