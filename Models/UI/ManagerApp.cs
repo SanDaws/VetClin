@@ -61,7 +61,7 @@ public class ManagerApp
 
 
     }  
-   
+// the other 3 methods are distributed in diferent classes   bbut are used for the interface 
 
     
 }
