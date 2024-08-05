@@ -62,6 +62,7 @@ public static class Menues
         switch (response.Key)
         {
             case ConsoleKey.D1://case read
+            Demo.ShowAllPatients();
                 break;      
 
             case ConsoleKey.D0:// case Return Menu
@@ -83,7 +84,7 @@ public static class Menues
     1: Listar Perros
     2: Nuevo Perro
     3: eliminar Registro de Perro
-    4: 
+    4: editar Registro de un perro
     5: 
 
     0: Salir
@@ -92,16 +93,16 @@ public static class Menues
         switch (response.Key)
         {
             case ConsoleKey.D1://case read
-                
+                Demo.ShowAnimals("perro");
                 break;
             case ConsoleKey.D2:// case create
                 Demo.SaveDog(ManagerApp.CreateDog());
                 break;
             case ConsoleKey.D3:// case delete
-                
+                Demo.DeleteDog(Dog.SearchDog(Demo.Dogs));
                 break;
-            case ConsoleKey.D4:// 
-                
+            case ConsoleKey.D4:// case update 
+                Demo.updateDog(Dog.SearchDog(Demo.Dogs));
                 break;
             case ConsoleKey.D5:
                 
@@ -122,10 +123,10 @@ public static class Menues
         Util.Title("Gatos",ConsoleColor.Blue);
         Console.Write($@"
     oprima el numero de opcion  a la que decea acceder
-    1: Lista Gatoes
+    1: Lista Gatos
     2: Nuevo registro de Gato
     3: eliminar registro de Gato
-    4: 
+    4: Actualizar registro de Gato
 
     0: Salir
     ");
@@ -133,6 +134,7 @@ public static class Menues
         switch (response.Key)
         {
             case ConsoleKey.D1://case read
+            Demo.ShowAnimals("gato");
                 break;
             case ConsoleKey.D2:// case create
             Demo.SaveCat(ManagerApp.CreateCat());
@@ -140,7 +142,8 @@ public static class Menues
             case ConsoleKey.D3:// case Delete
                 
                 break;
-                case ConsoleKey.D4:// 
+                case ConsoleKey.D4:// update
+                Demo.updateCat(Cat.Searchcat(Demo.Cats));
                 
                 break;
             case ConsoleKey.D0:// case Return Menu
