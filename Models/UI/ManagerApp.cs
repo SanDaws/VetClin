@@ -6,12 +6,14 @@ using Simulacro.Models;
 
 namespace VetClin.Models.UI;
 
-public static class ManagerApp
+public class ManagerApp
 {
+
+
     public static Dog CreateDog(){
         Util.Title("Nuevo Perro",ConsoleColor.DarkGreen);
         //Name
-        Console.Write("Nombre del Conductor: ");
+        Console.Write("Nombre del Perro: ");
         string name= Exceptions.SafeEMptyorNull();
         //b-day
         DateOnly birthDate= Exceptions.SafeDateonly();
@@ -35,7 +37,7 @@ public static class ManagerApp
 
         
 
-        Dog newDog= new Dog(0,name,birthDate,breed,color,weightInKg,MicrochipNumber,BarkVolume); 
+        Dog newDog= new Dog(name,birthDate,breed,color,weightInKg,MicrochipNumber,BarkVolume); 
         return newDog;
     }
     public static Cat CreateCat(){
@@ -54,10 +56,12 @@ public static class ManagerApp
         //weight
         double weightInKg= Exceptions.SafeDouble("Peso en Kilogramos(Kg)");
 
-        Cat NewCat= new Cat(0,name,birthDate,breed,color,weightInKg);
+        Cat NewCat= new Cat(name,birthDate,breed,color,weightInKg);
         return NewCat;
 
 
     }  
+   
+
     
 }
