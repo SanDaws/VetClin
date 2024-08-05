@@ -12,7 +12,7 @@ public class VeteinaryClinic
 
 
 
-    public static int VehicleIdGenerator(){
+    public static int IdGenereator(){
         //this method will look in the vehicle list, look for the lenght, add +1, lok if that number is alredy, and give aditional number untill finds a non number
         int IdNew = Dogs.Count + 1;// based on the vehicle lenght he will give a number
         do
