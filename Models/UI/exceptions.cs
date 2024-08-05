@@ -17,7 +17,7 @@ public static class Exceptions
         Console.Write(arg+": ");
         try
         {
-            option = Convert.ToInt32(AntiEMptyorNull());
+            option = Convert.ToInt32(SafeEMptyorNull());
         }
         catch (FormatException)// Exception for impossible to convert
         {
@@ -32,7 +32,7 @@ public static class Exceptions
         Console.Write(arg+": ");
         try
         {
-            option = Convert.ToDouble(AntiEMptyorNull());
+            option = Convert.ToDouble(SafeEMptyorNull());
         }
         catch (FormatException)
         {
@@ -44,7 +44,7 @@ public static class Exceptions
 
     }
 
-    public static string AntiEMptyorNull(){// most for strings, but avoids the null or empty posibility in a string
+    public static string SafeEMptyorNull(){// most for strings, but avoids the null or empty posibility in a string
             string? text;
         do
         {
@@ -94,7 +94,7 @@ public static class Exceptions
         Console.Write(arg+": ");
         try
         {
-            option = Convert.ToByte(AntiEMptyorNull());
+            option = Convert.ToByte(SafeEMptyorNull());
         }
         catch (FormatException)
         {
