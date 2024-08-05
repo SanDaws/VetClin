@@ -17,10 +17,12 @@ public class Dog:Animal
 
     //Method
     //constructor
-    public Dog(string Name,DateOnly BirthDate,string Breed,string Color,double WeightInKg,string MicrochipNumber,string BarkVolume, string CoatType):base(Name,BirthDate,Breed,Color,WeightInKg){
+    public Dog(int id,string Name,DateOnly BirthDate,string Breed,string Color,double WeightInKg,string MicrochipNumber,string BarkVolume)
+    :base(Name,BirthDate,Breed,Color,WeightInKg){
+        Id=id;
         this.MicrochipNumber=MicrochipNumber;
         this.BarkVolume=BarkVolume;
-        this.CoatType=CoatType;
+        FurrOrCoatLenghtSwitch();
         BredingStatusSwitch();
         TemperamentSwitch();
 
@@ -49,6 +51,40 @@ public class Dog:Animal
             break;
         }
 
+
+    }
+    public void FurrOrCoatLenghtSwitch(){
+            //establish a the breading status
+        Console.WriteLine($@"{Name} Tiene pelaje :
+        1: Sin Pelo
+        2: Pelo Corto
+        3: Pelo Mediano
+        4: Pelo Largo
+        ");
+        ConsoleKeyInfo response=Console.ReadKey();
+        switch (response.Key)
+        {
+            case ConsoleKey.D1:
+            CoatType= "Sin Pelo";
+
+            break;
+            case ConsoleKey.D2:
+            CoatType= "Pelo Corto";
+            break;
+            case ConsoleKey.D3:
+            CoatType= "Pelo Mediano";
+
+            break;
+            case ConsoleKey.D4:
+            CoatType= "Pelo Largo";
+            break;
+            
+            
+            default:
+            Util.RedText("Opcion no Existente");
+            FurrOrCoatLenghtSwitch();
+            break;
+        }
 
     }
     public void TemperamentSwitch(){
@@ -82,7 +118,7 @@ public class Dog:Animal
 public override void ShowInformation()
 {
     BasicReview();
-    Console.WriteLine($"{MicrochipNumber,20}{BarkVolume,6},{CoatType,10}");
+    Console.WriteLine($"|{MicrochipNumber,20}|{BarkVolume,6}|{CoatType,10}|{BreedStatusTOtext(BreedingStatus),12}");
 }
 
 }
