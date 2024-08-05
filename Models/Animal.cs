@@ -16,7 +16,7 @@ public abstract class Animal
     protected double WeightInKg;
     //cosntructor
     public Animal(string Name,DateOnly BirthDate,string Breed,string Color,double WeightInKg){
-        //id=VeteinaryClinic.VehicleIdGenerator();
+        id=VeteinaryClinic.IdGenereator();
         this.Name=Name;
         this.BirthDate=BirthDate;
         this.Breed=Breed;
@@ -26,14 +26,14 @@ public abstract class Animal
     }
     public abstract void ShowInformation();// this should be Virtual insted of abstract for an easy implementation and scalation
 
-    protected void BasicReview(){
+    protected void BasicReview(){//shows the basic data of the animal
         
         Console.Write($"{id,20}|{Name,20}|{Breed,30}|{Color,20}|{WeightInKg,6}|{CalculateAgeInMonths(),15}");
     }
     
 
 
-    protected int CalculateAgeInMonths(){
+    protected int CalculateAgeInMonths(){ // returns a the total of months alive of the animal
         int months;
         DateOnly now=DateOnly.FromDateTime(DateTime.Now);
         months= (BirthDate.Year-now.Year)*12;
@@ -41,7 +41,7 @@ public abstract class Animal
         return months;
     }
 
-    protected string BreedStatusTOtext(bool condition){
+    protected string BreedStatusTOtext(bool condition){// String method for printing in the sons class
         return(condition== true)?"Castrado":"Sin Castrar";
     }
     
