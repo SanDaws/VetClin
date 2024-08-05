@@ -161,10 +161,10 @@ public void CastrateAnimal(){
         Util.Title("Buscar Perro",ConsoleColor.DarkYellow);
         Console.Write("Id del gato");
         string id= Exceptions.SafeEMptyorNull();
-        Dog? resultCat= Dogs.FirstOrDefault(p=> p.Id==Guid.Parse(id));
-        if (resultCat!= null)
+        Dog? resultDog= Dogs.FirstOrDefault(p=> p.Id==Guid.Parse(id));
+        if (resultDog!= null)
         {
-            return resultCat;
+            return resultDog;
         }
         else
         {
@@ -172,6 +172,23 @@ public void CastrateAnimal(){
             SearchDog(Dogs);
         }
         return null;//
+        
+
+    }
+     public static Dog SearchDog(List<Dog> Dogs, string id){
+        Util.Title("Buscar Perro",ConsoleColor.DarkYellow);
+        
+        Dog? resultDog= Dogs.FirstOrDefault(p=> p.Id==Guid.Parse(id));
+        if (resultDog!= null)
+        {
+            return resultDog;
+        }
+        else
+        {
+            Util.RedText("Cat not found");
+            return null;//
+        }
+        
         
 
     }

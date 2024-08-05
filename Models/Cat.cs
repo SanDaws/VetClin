@@ -133,7 +133,23 @@ public class Cat:Animal
             Util.RedText("Cat not found");
             Searchcat(cats);
         }
-        return null;//
+        return null;//the loop before will avoid this, but hte program need it
+        
+
+    }
+    public static Cat Searchcat(List<Cat> cats,string id){
+        
+        Cat? resultCat= cats.FirstOrDefault(p=> p.Id==Guid.Parse(id));
+        if (resultCat!= null)
+        {
+            return resultCat;
+        }
+        else
+        {
+            Util.RedText("Cat not found");
+            return null;//
+        }
+        
         
 
     }
