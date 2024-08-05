@@ -80,9 +80,9 @@ public static class Exceptions
             SafeDateonly();
         }
         //probe that the year is not for the future
-        if (thatDay.Year > now.Year)
+        if (thatDay.CompareTo(now)>0)
         {
-            Util.RedText("Fecha no existente(fecha futura)");
+            Util.RedText("Fecha no existente(fecha futura o presente)");
             SafeDateonly();
 
         }
