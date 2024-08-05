@@ -9,11 +9,11 @@ namespace VetClin.Models;
 public class Dog:Animal
 {
     //atributes
-    bool BreedingStatus;//an animal is castrated == true
-    string Temperament;
-    string MicrochipNumber;
-    string BarkVolume;
-    string CoatType;
+    public bool BreedingStatus;//an animal is castrated == true
+    public string Temperament;
+    public string MicrochipNumber;
+   public  string BarkVolume;
+    public string CoatType;
 
     //Method
     //constructor

@@ -7,5 +7,7 @@ namespace VetClin.Models;
 
     public class Cat
     {
+        public bool BreedingStatus;
         
+
     }
